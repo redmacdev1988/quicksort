@@ -1,4 +1,4 @@
-# quicksort
+# QUICKSORT
 Quicksort implementation in JS
 
 Understanding and implementing quicksort comes in 2 main steps:
@@ -88,8 +88,8 @@ The terminating statement of when low == high, we print (process) it.
 **We have now printed [1 2 3 4]**
 
 As you see, we have printed the left side of the main array. The next step is actually
-to print the pivot at index 4, which is 5. Thus at this point we have printed (processed)
-[1 2 3 4 5]
+to print the pivot at index 4, which is 5.  At this point, **we have printed (processed)
+[1 2 3 4 5]**.
 
 We continue in this fashion for the right array. And this is how recursive divide and conquer
 can touch every element in the array, in order.
