@@ -27,6 +27,8 @@ Say we have an array with 1 to 9. Indexed from 0 to 8.
 
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+![](http://shanghaiseagull.com/wp-content/uploads/2017/12/quicksort_1-1024x425.jpg)
+
 The concept of recursive divide and conquer is that we calculate a pivot first. The pivot is calculated to be somewhere in the middle of the array, then the left and right array are recursively processed.
 
 For simplification purposes, we want to keep things simple. So let’s calculate the pivot such that it is:
@@ -38,12 +40,7 @@ floor of (0+8)/2 = 4
 
 We'll print the pivot AFTER we process the left array
 
-Then we recursively process the left array.
-
-![](http://shanghaiseagull.com/wp-content/uploads/2017/12/quicksort_1-1024x425.jpg)
-
-
-## process left array of pivot 2
+## process left array of pivot index 4
 
 ![](http://shanghaiseagull.com/wp-content/uploads/2017/12/quicksort_2-1024x362.jpg)
 
@@ -55,13 +52,13 @@ floor of (0 + 3)/2 = 1
 
 Our pivot is now element 2 at index 1. Remember, we'll print this after we process the left array.
 
-## print (process) the element
+## process left array of pivot index 1
 
 [1(low, high)]
 
 As we see, low == high, so we simply print (process) the element 1. **We have printed [1]**
 
-## print the pivot 2
+## print the element at pivot index 1
 
 Popping back to the previous divAndConq function stack, we then print 2.
 **We now have printed [1 2]**.
