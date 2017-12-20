@@ -123,16 +123,21 @@ Any values on the right side is indeed larger than the pivot.
 [35(lo), 33, 42, 10, 14, 19, 27, 44, 26, 31(pivot)]
 hi is -1
 
-35 > 31? Yes! so we need to swap 35. decrement hi.
+35 > 31? Yes! so we need to swap 35. Let's find the right side.
+
+decrement hi.
 
 [35(lo), 33, 42, 10, 14, 19, 27, 44, 26(hi), 31(pivot)]
 
 26 < 31 We need to swap this. So now 35 and 26 swap.
+
+[26(lo), 33, 42, 10, 14, 19, 27, 44, 35(hi), 31(pivot)]
+
 We increment lo to process the next one.
 
 [26, 33(lo), 42, 10, 14, 19, 27, 44, 35(hi), 31(pivot)]
 
-33 > 31 ? Yes! so we need to swap 33. decrement hi.
+33 > 31 ? Yes! so we need to swap 33. Let's find the right side. decrement hi.
 
 [26, 33(lo), 42, 10, 14, 19, 27, 44(hi), 35, 31(pivot)]
 
