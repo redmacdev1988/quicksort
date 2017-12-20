@@ -62,7 +62,7 @@ As we see, low == high, so we simply print (process) the element 1. **We have pr
 
 ## print the element at pivot index 1
 
-Popping back to the previous divAndConq function stack, we then print element 2 at index 1.
+Popping back to the previous divAndConq function stack, we then print pivot value 2 at index 1.
 **We now have printed [1 2]**.
 
 After the pivot, we process the right array.
@@ -75,20 +75,20 @@ floor of (2+3)/2 = 2 (index 2 is pivot)
 
 [3(low, pivot), 4(high)]
 
-We'll print the pivot (3) after we process the left array
+We'll print the pivot value (3) at index 2, after we process the left array
 
 Left array in this case will be divAndConq(2, 2-1) or divAndConq(2, 1).
 At that function stack, we have terminating statement of when low > high, we
 simply return and do nothing.
 
-We come back to the [3,4] stack, and print pivot 3. **We have printed [1 2 3]**
+We come back to the [3,4] stack, and print pivot value 3 at index 2. **We have printed [1 2 3]**
 
 Then we hit the right array, which is divAndConq(2+1, 3) or divAndConq(3,3).
 The terminating statement of when low == high, we print (process) it.
 **We have now printed [1 2 3 4]**
 
 As you see, we have printed the left side of the main array. The next step is actually
-to print the pivot at index 4, which is 5.  At this point, **we have printed (processed)
+to print the pivot at index 4, which is value 5.  At this point, **we have printed (processed)
 [1 2 3 4 5]**.
 
 We continue in this fashion for the right array. And this is how recursive divide and conquer
