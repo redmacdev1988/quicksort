@@ -62,7 +62,7 @@ As we see, low == high, so we simply print (process) the element 1. **We have pr
 
 ## print the element at pivot index 1
 
-Popping back to the previous divAndConq function stack, we then print 2.
+Popping back to the previous divAndConq function stack, we then print element 2 at index 1.
 **We now have printed [1 2]**.
 
 After the pivot, we process the right array.
