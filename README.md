@@ -9,6 +9,8 @@ Understanding and implementing quicksort comes in 2 main steps:
 
 # The divide and conquer recursion
 
+ref - http://shanghaiseagull.com/index.php/2017/12/19/recursive-divide-and-conquer-on-arrays/
+
 The divide and conquer recursion on an array occurs when we have dubbed a mid,
 then recursively go into the left side of the array. Then, the right side.
 
@@ -84,3 +86,10 @@ We come back to the [3,4] stack, and print pivot 3. **We have printed [1 2 3]**
 Then we hit the right array, which is divAndConq(2+1, 3) or divAndConq(3,3).
 The terminating statement of when low == high, we print (process) it.
 **We have now printed [1 2 3 4]**
+
+As you see, we have printed the left side of the main array. The next step is actually
+to print the pivot at index 4, which is 5. Thus at this point we have printed (processed)
+[1 2 3 4 5]
+
+We continue in this fashion for the right array. And this is how recursive divide and conquer
+can touch every element in the array, in order.
