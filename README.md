@@ -40,7 +40,12 @@ We'll print the pivot AFTER we process the left array
 
 Then we recursively process the left array.
 
+![](http://shanghaiseagull.com/wp-content/uploads/2017/12/quicksort_1-1024x425.jpg)
+
+
 ## process left array of pivot 2
+
+![](http://shanghaiseagull.com/wp-content/uploads/2017/12/quicksort_2-1024x362.jpg)
 
 [1(low), 2, 3, 4(high)]
 
@@ -82,34 +87,3 @@ We come back to the [3,4] stack, and print pivot 3. **We have printed [1 2 3]**
 Then we hit the right array, which is divAndConq(2+1, 3) or divAndConq(3,3).
 The terminating statement of when low == high, we print (process) it.
 **We have now printed [1 2 3 4]**
-
-#### source code
-    var arr = [1,2,3,4,5,6,7,8,9];
-
-    function partition(arr, low, high) {
-        return Math.floor((low + high) / 2);
-    }
-
-    function divAndConq(arr, low, high) {
-
-      console.log("\ndivAndConq: [" + low + ", " + high + "]");
-
-      if (low == high) {
-        console.log(" processing at element: " + arr[low] + " √ ");
-      }
-
-      if (low < high) { // low >= high skips
-
-        var mid = partition(arr, low, high);
-        console.log(low + " < " + high + "? √, " + "middle is: " + mid);
-
-        divAndConq(arr, low, mid-1);
-        console.log(" processing at element: " + arr[mid] + " √ ");
-        divAndConq(arr, mid + 1, high);
-
-      } else {
-        console.log(low + " < " + high + "? X");
-      }
-    }
-
-    divAndConq(arr, 0, arr.length-1);
