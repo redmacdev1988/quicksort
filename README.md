@@ -3,8 +3,8 @@ Quicksort implementation in JS
 
 Understanding and implementing quicksort comes in 2 main steps:
 
-* the divide and conquer recursion
-* the partition
+* divide and conquer recursion
+* partition
 
 
 # The divide and conquer recursion
@@ -93,3 +93,57 @@ to print the pivot at index 4, which is value 5.  At this point, **we have print
 
 We continue in this fashion for the right array. And this is how recursive divide and conquer
 can touch every element in the array, in order.
+
+
+# The Partition
+
+The whole purpose of the partition is to make sure the values on the left side are all smaller than the pivot.
+And that the values on the right side is larger than the pivot. If any values are not the case, they need to be swapped.
+We use the last element as the pivot.
+
+
+## left side value > pivot
+
+We run through the front of the array and we do leave alone values smaller than the pivot. If the value > pivot,
+we stop and proceed to find any values < pivot on the right side.
+
+## right side value < pivot
+
+Once a value is larger than pivot is found on the left side, we need to find a value smaller than pivot on the right side.
+Once both values are found, we swap them. That way, we scoot values smaller than pivot towards the left, and values larger
+than the pivot towards the right.
+
+## left and right cross, we swap with pivot
+
+We keep processing until the lo and hi cross. In that case, if we swap the element with pivot,
+then we make sure that all values on the left of pivot is in indeed smaller than pivot.
+Any values on the right side is indeed larger than the pivot.
+
+
+[35(lo), 33, 42, 10, 14, 19, 27, 44, 26, 31(pivot)]
+hi is -1
+
+35 > 31? Yes! so we need to swap 35. decrement hi.
+
+[35(lo), 33, 42, 10, 14, 19, 27, 44, 26(hi), 31(pivot)]
+
+26 < 31 We need to swap this. So now 35 and 26 swap.
+We increment lo to process the next one.
+
+[26, 33(lo), 42, 10, 14, 19, 27, 44, 35(hi), 31(pivot)]
+
+33 > 31 ? Yes! so we need to swap 33. decrement hi.
+
+[26, 33(lo), 42, 10, 14, 19, 27, 44(hi), 35, 31(pivot)]
+
+44 < 31 ? NOPE, is ok.
+
+[26, 33(lo), 42, 10, 14, 19, 27(hi), 44, 35, 31(pivot)]
+
+27 < 35? YES, we need to swap this. We swap 27 AND 33.
+
+[26, 27(lo), 42, 10, 14, 19, 33(hi), 44, 35, 31(pivot)]
+
+We increment lo to process the next one.
+
+[26, 27, 42(lo), 10, 14, 19, 33(hi), 44, 35, 31(pivot)]
