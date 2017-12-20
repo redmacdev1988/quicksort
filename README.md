@@ -25,19 +25,18 @@ But how?
 
 Say we have an array with 1 to 9. Indexed from 0 to 8.
 
-[1,2,3,4,5,6,7,8,9]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 The concept of recursive divide and conquer is that we calculate a pivot first. The pivot is calculated to be somewhere in the middle of the array, then the left and right array are recursively processed.
 
 For simplification purposes, we want to keep things simple. So let’s calculate the pivot such that it is:
-floor of (low + high)/2
+floor of (low index + high index)/2
 
-## process left array
-[1(low), 2, 3, 4(pivot), 5, 6, 7 ,8(high)]
+floor of (0+8)/2 = 4
 
-pivot = floor(4) = 4, we’ll print this pivot AFTER we process the left array
+[1(low), 2, 3, 4, 5(pivot), 6, 7, 8, 9(high)]
 
-Our pivot will be printed after all the left array is processed.
+We'll print the pivot AFTER we process the left array
 
 Then we recursively process the left array.
 
