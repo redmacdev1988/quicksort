@@ -59,7 +59,7 @@ As we see, low == high, so we simply print (process) the element 1. **We have pr
 ## print the pivot 2
 
 Popping back to the previous divAndConq function stack, we then print 2.
-We now have printed **[1 2]**.
+**We now have printed [1 2]**.
 
 After the pivot, we process the right array.
 
@@ -77,11 +77,11 @@ Left array in this case will be divAndConq(2, 2-1) or divAndConq(2, 1).
 At that function stack, we have terminating statement of when low > high, we
 simply return and do nothing.
 
-We come back to the [3,4] stack, and print pivot 3. We have printed **[1 2 3]**
+We come back to the [3,4] stack, and print pivot 3. **We have printed [1 2 3]**
 
 Then we hit the right array, which is divAndConq(2+1, 3) or divAndConq(3,3).
 The terminating statement of when low == high, we print (process) it.
-We have now printed **[1 2 3 4]**
+**We have now printed [1 2 3 4]**
 
 #### source code
     var arr = [1,2,3,4,5,6,7,8,9];
