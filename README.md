@@ -40,17 +40,48 @@ We'll print the pivot AFTER we process the left array
 
 Then we recursively process the left array.
 
-## process left array
+## process left array of pivot 2
+
+[1(low), 2, 3, 4(high)]
+
+floor of (0 + 3)/2 = 1
+
 [1(low), 2(pivot), 3, 4(high)]
 
-Our pivot is now element 2. Remember, we'll print this after we process the left array.
+Our pivot is now element 2 at index 1. Remember, we'll print this after we process the left array.
 
-## process left array
+## print (process) the element
+
 [1(low, high)]
 
-As we see, low == high, so we simply print (process) the element 1.
+As we see, low == high, so we simply print (process) the element 1. **We have printed [1]**
 
+## print the pivot 2
 
+Popping back to the previous divAndConq function stack, we then print 2.
+We now have printed **[1 2]**.
+
+After the pivot, we process the right array.
+
+## process right array of pivot 2
+
+[3(low), 4(high)]
+
+floor of (2+3)/2 = 2 (index 2 is pivot)
+
+[3(low, pivot), 4(high)]
+
+We'll print the pivot (3) after we process the left array
+
+Left array in this case will be divAndConq(2, 2-1) or divAndConq(2, 1).
+At that function stack, we have terminating statement of when low > high, we
+simply return and do nothing.
+
+We come back to the [3,4] stack, and print pivot 3. We have printed **[1 2 3]**
+
+Then we hit the right array, which is divAndConq(2+1, 3) or divAndConq(3,3).
+The terminating statement of when low == high, we print (process) it.
+We have now printed **[1 2 3 4]**
 
 #### source code
     var arr = [1,2,3,4,5,6,7,8,9];
