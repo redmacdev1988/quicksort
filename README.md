@@ -120,8 +120,7 @@ then we make sure that all values on the left of pivot is in indeed smaller than
 Any values on the right side is indeed larger than the pivot.
 
 
-[35(lo), 33, 42, 10, 14, 19, 27, 44, 26, 31(pivot)]
-hi is -1
+[35(lo), 33, 42, 10, 14, 19, 27, 44, 26, 31(hi, pivot)]
 
 35 > 31? Yes! so we need to swap 35. Let's find the right side.
 
