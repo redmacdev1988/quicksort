@@ -56,18 +56,15 @@ function partition(arr, low, high) {
     }
   } while (lo < hi);
 
-  console.log("final step! swap element lo " +  arr[lo] + ", with pivot " + arr[high]);
+  console.log("Last partition step: swap element at crossed index " +  arr[lo] + ", with pivot " + arr[high]);
   swap(arr, lo, high);
   return lo;
 } // partition
 
-// console.log(arr);
-// partition(arr, 0, arr.length-1);
-// console.log(arr);
-
 function divAndConq(arr, low, high) {
 
   console.log("\n ========= divAndConq: [" + low + ", " + high + "] ============");
+
   if (low > high) { console.log("lo > high. Skip"); return; }
   if (low == high) { console.log("lo == high. Skip"); return; }
 
@@ -77,10 +74,8 @@ function divAndConq(arr, low, high) {
 
     divAndConq(arr, low, pivot-1);
     divAndConq(arr, pivot + 1, high);
-
-  } else {
-    console.log(low + " < " + high + "? X");
   }
+
 }
 
 
