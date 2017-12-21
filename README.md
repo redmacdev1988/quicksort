@@ -1,6 +1,16 @@
 # QUICKSORT
 Quicksort implementation in JS
 
+# Runtime
+
+Best-case: O(n log n)
+Average: O(n log n)
+Worst: O (n^2)
+
+* Not stable.
+* Does not require extra storage. (in-place)
+* Used on arrays due to good locality of reference (storage frequently accessed)
+
 Understanding and implementing quicksort comes in 2 main steps:
 
 * divide and conquer recursion
