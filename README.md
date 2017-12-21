@@ -107,11 +107,15 @@ We use the last element as the pivot.
 We run through the front of the array and we do leave alone values smaller than the pivot. If the value > pivot,
 we stop and proceed to find any values < pivot on the right side.
 
+![](http://shanghaiseagull.com/wp-content/uploads/2017/12/quicksort_partition_lo.jpg)
+
 ## right side value < pivot
 
 Once a value is larger than pivot is found on the left side, we need to find a value smaller than pivot on the right side.
 Once both values are found, we swap them. That way, we scoot values smaller than pivot towards the left, and values larger
 than the pivot towards the right.
+
+![](http://shanghaiseagull.com/wp-content/uploads/2017/12/quicksort_partition_hi.jpg)
 
 ## left and right cross, we swap with pivot
 
@@ -119,6 +123,9 @@ We keep processing until the lo and hi cross. In that case, if we swap the eleme
 then we make sure that all values on the left of pivot is in indeed smaller than pivot.
 Any values on the right side is indeed larger than the pivot.
 
+![](http://shanghaiseagull.com/wp-content/uploads/2017/12/quicksort_partition_swap.jpg)
+
+# Example
 
 [35(lo), 33, 42, 10, 14, 19, 27, 44, 26, 31(hi, pivot)]
 
