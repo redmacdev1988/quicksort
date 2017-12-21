@@ -1,5 +1,5 @@
 
-var arr = [35,33,42,10,14,19,27,44,26,31];
+var arr = [30, 8, 2, 11, 22];
 
 function swap(arr, lo, hi) {
   var temp = arr[lo];
@@ -44,7 +44,6 @@ function partition(arr, low, high) {
   var lo = low;
 
   do {
-    console.log("\n---- PASS ----");
     lo = lo_findlargerThanPivot(arr, pivot, lo, hi, function() {
       hi--; console.log("Its hi's turn now! Decremented hi to : " + hi + " to find element smaller than pivot " + pivot);
     });
@@ -62,22 +61,28 @@ function partition(arr, low, high) {
   return lo;
 } // partition
 
+// console.log(arr);
+// partition(arr, 0, arr.length-1);
+// console.log(arr);
 
 function divAndConq(arr, low, high) {
 
-  console.log("\ndivAndConq: [" + low + ", " + high + "]");
+  console.log("\n ========= divAndConq: [" + low + ", " + high + "] ============");
+  if (low > high) { console.log("lo > high. Skip"); return; }
+  if (low == high) { console.log("lo == high. Skip"); return; }
 
   if (low < high) {
-    var pi = partition(arr, low, high);
-    console.log(low + " < " + high + "? √, " + "middle is: " + pi);
+    var pivot = partition(arr, low, high);
+    console.log("Pivot: " + pivot);
 
-    divAndConq(arr, low, pi-1);
-    divAndConq(arr, pi + 1, high);
+    divAndConq(arr, low, pivot-1);
+    divAndConq(arr, pivot + 1, high);
 
   } else {
     console.log(low + " < " + high + "? X");
   }
 }
+
 
 console.log(arr);
 divAndConq(arr, 0, arr.length-1);
