@@ -131,13 +131,13 @@ Any values on the right side is indeed larger than the pivot.
 
 [35(lo), 33, 42, 10, 14, 19, 27, 44, 26, 31(hi, pivot)]
 
-35 > 31? Yes! so we need to swap 35. Let's find the right side.
+35 (lo) > 31 (pivot)? Yes! so we need to swap 35. Let's find the right side.
 
 decrement hi.
 
 [35(lo), 33, 42, 10, 14, 19, 27, 44, 26(hi), 31(pivot)]
 
-26 < 31 We need to swap this. So now 35 and 26 swap.
+26 (hi) < 31 (pivot)? We need to swap this. So now 35 and 26 swap.
 
 [26(lo), 33, 42, 10, 14, 19, 27, 44, 35(hi), 31(pivot)]
 
@@ -145,18 +145,47 @@ We increment lo to process the next one.
 
 [26, 33(lo), 42, 10, 14, 19, 27, 44, 35(hi), 31(pivot)]
 
-33 > 31 ? Yes! so we need to swap 33. Let's find the right side. decrement hi.
+33 (lo) > 31 (pivot)? Yes! so we need to swap 33. Let's find the right side. decrement hi.
 
 [26, 33(lo), 42, 10, 14, 19, 27, 44(hi), 35, 31(pivot)]
 
-44 < 31 ? NOPE, is ok.
+44 (hi) < 31 (pivot)? NOPE, is ok. decrement hi.
 
 [26, 33(lo), 42, 10, 14, 19, 27(hi), 44, 35, 31(pivot)]
 
-27 < 35? YES, we need to swap this. We swap 27 AND 33.
+27 (hi) < 31 (pivot)? YES, we need to swap this. We swap 27 AND 33.
 
 [26, 27(lo), 42, 10, 14, 19, 33(hi), 44, 35, 31(pivot)]
 
 We increment lo to process the next one.
 
 [26, 27, 42(lo), 10, 14, 19, 33(hi), 44, 35, 31(pivot)]
+
+42 (lo) > 31 (pivot)? Yes! so we need to swap 42. Let's find the right side.
+
+decrement hi.
+
+[26, 27, 42(lo), 10, 14, 19(hi), 33, 44, 35, 31(pivot)]
+
+19 (hi) < 31 (pivot) ? YES! so we need to swap 19. WE swap 42 and 19
+
+[26, 27, 19(lo), 10, 14, 42(hi), 33, 44, 35, 31(pivot)]
+
+We increment lo to process the next one.
+
+[26, 27, 19, 10 (lo), 14, 42(hi), 33, 44, 35, 31(pivot)]
+
+10 (lo) > 31 (pivot)? NO, keep moving...increment lo.
+
+[26, 27, 19, 10, 14 (lo), 42(hi), 33, 44, 35, 31(pivot)]
+
+14 (lo) > 31 (pivot)? NO, keep moving...increment lo.
+
+[26, 27, 19, 10, 14, 42(lo, hi), 33, 44, 35, 31(pivot)]
+
+lo and hi have now crossed. We swap the element here with the pivot.
+
+[26, 27, 19, 10, 14, 31(lo, hi), 33, 44, 35, 42(pivot)]
+
+Done! as you can now see, all the values on left side of pivot value 31 are smaller than 31.
+All the values on the right side of pivot 31, are larger than 31.
